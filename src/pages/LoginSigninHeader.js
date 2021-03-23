@@ -4,14 +4,14 @@ import RegisterPage from './RegisterPage';
 
 
 export default function LoginSigninHeader() {
-    const [signinTab, setTab] = useState(true)
+    const [currentTab, setTab] = useState(true)
 
     const signin = () => {
-        if (signinTab === false)
+        if (currentTab === false)
             setTab(prevTab => !prevTab)
     }
     const signup = () => {
-        if (signinTab === true)
+        if (currentTab === true)
             setTab(prevTab => !prevTab)
     }
     return (
@@ -19,11 +19,11 @@ export default function LoginSigninHeader() {
             <div className="App__Aside"></div>
             <div className="App__Form">
                 <div className="PageSwitcher">
-                <button onClick={signin} className="PageSwitcher__Item">Sign In</button>
-                <button onClick={signup} className="PageSwitcher__Item">Sign Up</button>
+                    <button onClick={signin} className="PageSwitcher__Item">Sign In</button>
+                    <button onClick={signup} className="PageSwitcher__Item">Sign Up</button>
                 </div>
                 <div className="FormTitle">
-                    {signinTab ? <LoginPage /> : <RegisterPage />}
+                    {currentTab ? <LoginPage /> : <RegisterPage />}
                 </div>
             </div>
         </div>
