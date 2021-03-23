@@ -3,7 +3,7 @@ import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 
 
-export default function LoginSigninHeader() {
+export default function LoginSigninHeader(props) {
     const [currentTab, setTab] = useState(true)
 
     const signin = () => {
@@ -23,7 +23,7 @@ export default function LoginSigninHeader() {
                     <button onClick={signup} className="PageSwitcher__Item">Sign Up</button>
                 </div>
                 <div className="FormTitle">
-                    {currentTab ? <LoginPage /> : <RegisterPage />}
+                    {currentTab ? <LoginPage {...props} /> : <RegisterPage {...props} />}
                 </div>
             </div>
         </div>
