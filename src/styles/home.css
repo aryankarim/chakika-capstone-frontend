@@ -278,7 +278,13 @@ nav .menu-btn,
 	border-radius: 20px;
 	font-weight: 500;
 }
+#notfound{
+    background-color: rgb(255, 51, 0);
+  }
 @media(max-width:1190px){
+    #notfound{
+        background-color: aqua;
+      }
 	.header{
         background-size: 1150px !important;
         text-align: center;

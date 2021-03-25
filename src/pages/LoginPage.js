@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import auth from '../Auth'
+import axios from 'axios'
 import makeToast from "../Toaster";
 import '../styles/loginAndRegister.css'
 
 export default function LoginPage(props) {
     const [userState, setUserState] = useState({ email: '', password: '' })
-
+    setTimeout(() => { console.log(auth.isAuthenticated()); }, 3000)
     const handleChange = (e) => {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
