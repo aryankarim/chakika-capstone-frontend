@@ -9,6 +9,8 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
             {...rest}
             render={props => {
                 if (auth.isAuthenticated()) {
+                    console.log("is authenticated");
+                    console.log(auth.isAuthenticated());
                     return (<Component  {...props} />);//cuz routes cannot pass down costum props
                 } else {
                     return (<Redirect

@@ -15,11 +15,7 @@ class Auth {
             this.authenticated = true;
             return res;
         } catch (err) {
-            if (
-                err &&
-                err.response &&
-                err.response.data &&
-                err.response.data.message
+            if (err.response.data.message
             ) {
                 makeToast("error", err.response.data.message);
                 this.authenticated = false;
