@@ -16,14 +16,14 @@ export default function LoginSigninHeader() {
     }
     return (
         <div className="App">
-            <div className="App__Aside"></div>
+            <div className="App__Aside"><a href="./Home" className="App__Aside__Logo"></a></div>
             <div className="App__Form">
                 <div className="PageSwitcher">
                 <button onClick={signin} className="PageSwitcher__Item">Sign In</button>
                 <button onClick={signup} className="PageSwitcher__Item">Sign Up</button>
                 </div>
                 <div className="FormTitle">
-                    {signinTab ? <LoginPage /> : <RegisterPage />}
+                    {signinTab ? <LoginPage /> : <RegisterPage/>}
                 </div>
             </div>
         </div>

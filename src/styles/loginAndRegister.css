@@ -5,9 +5,19 @@
   color: #D4EDE8;
 }
 
+.App__Aside__Logo {
+  height: 49px;
+  width: 158px;
+  background-image: url("../pages/images/logo1.png");
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
 .App__Aside {
   width: 50%;
-  background-color: #D4EDE8;
+  background-color: #fff;
+  background-image: url("../pages/images/header-bgfliped.png");
 }
 
 .App__Form {
