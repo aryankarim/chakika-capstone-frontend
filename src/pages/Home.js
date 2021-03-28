@@ -4,6 +4,7 @@ import Howwework from './Components/Howwework';
 import About from './Components/About';
 import Search from './Components/Search';
 import '../styles/home.css';
+import Footer from './Components/Footer';
 
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
             <Header />
             <Howwework />
             <About />
-            <Search />
+            <Footer />
         </div>
     )
 }

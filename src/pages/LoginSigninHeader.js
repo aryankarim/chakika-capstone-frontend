@@ -16,7 +16,7 @@ export default function LoginSigninHeader(props) {
     }
     return (
         <div className="App">
-            <div className="App__Aside"></div>
+            <div className="App__Aside"><a href="./Home" className="App__Aside__Logo"></a></div>
             <div className="App__Form">
                 <div className="PageSwitcher">
                     <button onClick={signin} className="PageSwitcher__Item">Sign In</button>
