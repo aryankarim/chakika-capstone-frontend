@@ -27,8 +27,31 @@ class Auth {
     logout() {
         this.authenticated = false;
     }
-    isAuthenticated() {
-        return this.authenticated;
+    async isAuthenticated() {
+
+        try {
+            await axios
+                .get('http://localhost:8000/authenticate', {
+                    headers: {
+                        authorization: "Bearer " + localStorage.getItem("Chakika_token"),
+                    },
+                })
+                .then(response => {
+                    this.authenticated = true
+                    console.log("in isAuthenticated");
+                })
+                .catch(error => {
+                    console.log("in the err part", error)
+                    this.authenticated = false
+                })
+            console.log('something');
+            return this.authenticated;
+        } catch (err) {
+            console.log('new err');
+            this.authenticated = false;
+            return false
+        }
+
     }
 }
 

@@ -7,7 +7,6 @@ import '../styles/loginAndRegister.css'
 
 export default function LoginPage(props) {
     const [userState, setUserState] = useState({ email: '', password: '' })
-    setTimeout(() => { console.log(auth.isAuthenticated()); }, 3000)
     const handleChange = (e) => {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -28,9 +27,9 @@ export default function LoginPage(props) {
         e.preventDefault();
 
         auth.login(userState.email, userState.password).then((response) => {
-            makeToast("success", response.data.message);
+            makeToast("success", response.data.message);//makes life easier if message was not defined it will catch it
             localStorage.setItem("Chakika_token", response.data.token);
-            props.history.push("/home");
+            props.history.push("/");
         }).catch((err) => {
             console.log(err);
         });
