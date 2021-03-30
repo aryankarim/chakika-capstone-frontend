@@ -1,8 +1,8 @@
 const car_part = [
     {
         id:1,
-        product_n:"Wheel 1",
-        desc:"Best one yet",
+        product_n:"Wheel Nissan Sentra",
+        desc:"Kamaran Retail Shop",
         price: 150,
         currency: "$",
         thumb: require("./images/cp1.png")

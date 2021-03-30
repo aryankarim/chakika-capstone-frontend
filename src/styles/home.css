@@ -92,6 +92,12 @@ nav ul li a:hover{
 	box-shadow: 5px 10px 30px #D4EDE8;
 	transition: all ease 0.2s;
 }
+
+.activePage{
+	background-color: #2A6559;
+    color:#FFFFFF;
+}
+
 nav .menu-btn,
 .menu-icon{
 		display:none;
@@ -564,7 +570,6 @@ nav .menu-btn,
     background-color: #D4EDE8;
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
-    cursor: pointer;
   }
   
   .main_content .card:hover .btn {
@@ -591,7 +596,6 @@ nav .menu-btn,
 .main-footer{
     color: #D4EDE8;
     background-color: #2A6559;
-    padding-top: 3em;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -600,6 +604,7 @@ nav .menu-btn,
 
 hr{
     color: #D4EDE8;
+    width: 100%;
 }
 
 .col{
