@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
-import { Link, Router, Route } from "react-router-dom";
-import '../styles/loginAndRegister.css';
-import RegisterPage from './RegisterPage';
+import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom"
+import auth from '../Auth'
+import axios from 'axios'
+import makeToast from "../Toaster";
+import '../styles/loginAndRegister.css'
 
-export default function LoginPage() {
+export default function LoginPage(props) {
     const [userState, setUserState] = useState({ email: '', password: '' })
-
+    setTimeout(() => { console.log(auth.isAuthenticated()); }, 3000)
     const handleChange = (e) => {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -25,7 +27,14 @@ export default function LoginPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log('The form was submitted with the following data:');
+        auth.login(userState.email, userState.password).then((response) => {
+            makeToast("success", response.data.message);
+            localStorage.setItem("Chakika_token", response.data.token);
+            props.history.push("/home");
+        }).catch((err) => {
+            console.log(err);
+        });
+
     }
 
     return (
