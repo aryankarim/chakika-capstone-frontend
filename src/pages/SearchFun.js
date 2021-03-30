@@ -13,7 +13,7 @@ const SearchFun = () => {
                 <h2>{item.product_n}</h2>
                 <p>{item.desc}</p>
                 <p className="price">{item.price}<span>{item.currency}</span></p>
-                <div className="btn">Add to Cart</div>
+                <button className="btn">Add to Cart</button>
             </div>
         </div>
     );

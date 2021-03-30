@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav>
-        <a href="#" className="logo">
+        <a href="../Home" className="logo">
             <img src={logo} alt="logo" />
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
@@ -13,7 +13,7 @@ function Navbar() {
             <span className="nav-icon"></span>
         </label>
         <ul className="menu">
-            <li><a href="#" className="active">Home</a></li>
+            <li><a href="../Home">Home</a></li>
             <li><a href="#">Garage</a></li>
             <li><a href="#">Categories</a></li>
             <li><a href="#">Account</a></li>

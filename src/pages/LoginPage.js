@@ -42,7 +42,7 @@ export default function LoginPage() {
                 </div>
 
                 <div className="FormField">
-                    <button className="FormField__Button mr-20">Sign In</button> <Link to="/" className="FormField__Link">Create an account</Link>
+                    <button className="FormField__Button mr-20">Sign In</button>
                 </div>
                 
             </form>
