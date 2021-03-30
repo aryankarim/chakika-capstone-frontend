@@ -5,9 +5,19 @@
   color: #D4EDE8;
 }
 
+.App__Aside__Logo {
+  height: 49px;
+  width: 158px;
+  background-image: url("../pages/images/logo1.png");
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
 .App__Aside {
   width: 50%;
-  background-color: #D4EDE8;
+  background-color: #fff;
+  background-image: url("../pages/images/header-bgfliped.png");
 }
 
 .App__Form {
@@ -35,6 +45,19 @@
   outline: none;
   display: inline-block;
   text-decoration: none;
+}
+
+.PageSwitcher__Item:active{
+  color: #D4EDE8;
+}
+
+.PageSwitcher__Item:hover{
+  background-color: #1E4840;
+  transition: all ease 0.2s;
+}
+
+.PageSwitcher__Item:focus{
+  background-color: #1E4840;
 }
 
 .PageSwitcher__Item--Active {
@@ -132,6 +155,12 @@
   padding: 15px 70px;
   font-size: .8em;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.FormField__Button:active{
+  background-color: #142426;
+  color: #D4EDE8;
 }
 
 .FormField__Link {

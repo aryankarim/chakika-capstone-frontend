@@ -3,6 +3,7 @@ import axios from 'axios'
 import makeToast from "../Toaster";
 import { Link } from "react-router-dom";
 import '../styles/loginAndRegister.css';
+import LoginPage from './LoginPage';
 
 
 export default function RegisterPage() {
@@ -69,7 +70,7 @@ export default function RegisterPage() {
                 </div>
 
                 <div className="FormField">
-                    <button className="FormField__Button mr-20">Sign Up</button> <Link to="/sign-in" className="FormField__Link">I'm already member</Link>
+                    <button className="FormField__Button mr-20">Sign Up</button>
                 </div>
             </form>
         </div>
