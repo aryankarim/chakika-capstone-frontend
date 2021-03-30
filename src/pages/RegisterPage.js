@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import makeToast from "../Toaster";
 import { Link } from "react-router-dom";
 import '../styles/loginAndRegister.css';
 
 
 export default function RegisterPage() {
-    const [userState, setUserState] = useState({ email: '', password: '', fname: '', lname: '', hasAgreed: false });
+    const [userState, setUserState] = useState({ email: '', password: '', fname: '', lname: '', location: null, phone: '', hasAgreed: false });
 
     const handleChange = (e) => {
         let target = e.target;
@@ -25,13 +26,14 @@ export default function RegisterPage() {
 
         console.log('The form was submitted with the following data:');
 
-        axios
-            .post('https://jsonplaceholder.typicode.com/posts', userState)
+        axios.post('http://localhost:8000/user/register', userState)
             .then(response => {
-                console.log(response)
+                makeToast("success", response.data.message);
+                console.log("register success");
             })
-            .catch(error => {
-                console.log(error)
+            .catch(err => {
+                makeToast("error", err.response.data.message);
+                console.log("register failed", err)
             })
 
     }
@@ -56,8 +58,8 @@ export default function RegisterPage() {
                     <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={userState.email} onChange={handleChange} />
                 </div>
                 <div className="FormField">
-                    <label className="FormField__Label" htmlFor="number">Phone Number</label>
-                    <input type="text" id="number" className="FormField__Input" placeholder="Enter your Phone Number" name="number" value={userState.num} onChange={handleChange} />
+                    <label className="FormField__Label" htmlFor="phone">Phone Number</label>
+                    <input type="text" id="phone" className="FormField__Input" placeholder="Enter your Phone Number" name="phone" value={userState.num} onChange={handleChange} />
                 </div>
 
                 <div className="FormField">
