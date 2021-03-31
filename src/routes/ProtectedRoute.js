@@ -11,7 +11,7 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
             } else {
                 setverify('unauthenticated')
             }
-            console.log('in suth then');
+            console.log('in auth then');
             console.log(res);
         }).catch(() => {
             console.log('data fetch err')

@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom"
-import auth from '../Auth'
-import axios from 'axios'
-import makeToast from "../Toaster";
-import '../styles/loginAndRegister.css'
+import React, { useState } from 'react'
+import auth from '../../Auth'
+import makeToast from "../../Toaster";
+import '../../styles/loginAndRegister.css'
 
 export default function LoginPage(props) {
     const [userState, setUserState] = useState({ email: '', password: '' })
@@ -19,7 +17,7 @@ export default function LoginPage(props) {
             })
         });
         console.log(userState);
-        
+
 
     }
 
@@ -52,9 +50,9 @@ export default function LoginPage(props) {
                 <div className="FormField">
                     <button className="FormField__Button mr-20">Sign In</button>
                 </div>
-                
+
             </form>
         </div>
-        
+
     )
 }

@@ -56,7 +56,7 @@ input{
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../pages/images/header-bg.png");
+    background-image: url("../routes/images/header-bg.png");
 }
 nav{
 	display: flex;
@@ -291,11 +291,11 @@ nav .menu-btn,
 	text-align: center;
 	color:#242425;
 }
-.contact-input a{
+.contact-input button{
 	width:200px;
 	height:35px;
 	background-color:#2A6559;
-	color:#FFFFFF;
+	color:#D4EDE8;
 	display: flex;
 	font-size: 0.9rem;
 	justify-content: center;
@@ -305,12 +305,13 @@ nav .menu-btn,
 	font-weight: 500;
 }
 #notfound{
-    background-color: rgb(255, 51, 0);
+    width: 100%; height: 100%;
+    color: #2A6559;  
+    font-size: 10em; 
+    font-weight: bold; 
+    text-align: center; 
   }
 @media(max-width:1190px){
-    #notfound{
-        background-color: aqua;
-      }
 	.header{
         background-size: 1150px !important;
         text-align: center;

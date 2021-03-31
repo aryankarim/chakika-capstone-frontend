@@ -1,15 +1,15 @@
 import React from 'react'
-import Search from './Components/Search';
+import SearchSection from './Components/SearchSection';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import SearchFun from './SearchFun';
+import SearchFun from './pages/SearchFun';
 import '../styles/home.css';
 
-export default function Searchp() {
+export default function Search() {
     return (
         <div className="s-container">
             <Navbar />
-            <Search />
+            <SearchSection />
             <SearchFun />
             <Footer />
         </div>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import makeToast from "../Toaster";
-import { Link } from "react-router-dom";
-import '../styles/loginAndRegister.css';
-import LoginPage from './LoginPage';
+import makeToast from "../../Toaster";
+import '../../styles/loginAndRegister.css';
+
 
 
 export default function RegisterPage() {
