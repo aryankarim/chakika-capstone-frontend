@@ -1,15 +1,16 @@
 import React from 'react';
 
-function Search() {
+function SearchSection() {
   return (
     <div className="contact">
       <h3>Search For Your Need</h3>
       <div className="contact-input">
         <input type="text" placeholder="Search Here ..." name="search" />
-        <a href="#">Search</a>
+        <button onClick={() => { }} >Search</button>
+        {/* <a href="#">Search</a> */}
       </div>
     </div>
   );
 }
 
-export default Search;
+export default SearchSection;

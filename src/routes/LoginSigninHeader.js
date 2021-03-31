@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
+import { Link } from 'react-router-dom'
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 
 export default function LoginSigninHeader(props) {
@@ -16,7 +17,7 @@ export default function LoginSigninHeader(props) {
     }
     return (
         <div className="App">
-            <div className="App__Aside"><a href="./Home" className="App__Aside__Logo"></a></div>
+            <div className="App__Aside"><Link to='/' className="App__Aside__Logo"></Link></div>
             <div className="App__Form">
                 <div className="PageSwitcher">
                     <button onClick={signin} className="PageSwitcher__Item">Sign In</button>

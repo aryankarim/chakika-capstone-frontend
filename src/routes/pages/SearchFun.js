@@ -1,12 +1,12 @@
 import React from 'react'
-import car_part from "./car_parts.js";
+import car_part from "../car_parts.js";
 
 const SearchFun = () => {
     console.log(car_part);
-    const listItems = car_part.map((item)=>
+    const listItems = car_part.map((item) =>
         <div className="card" key={item.id}>
             <div className="card_img">
-                <img src="http://pngimg.com/uploads/car_wheel/car_wheel_PNG23321.png" />
+                <img src="http://pngimg.com/uploads/car_wheel/car_wheel_PNG23321.png" alt='' />
             </div>
 
             <div className="card_header">
@@ -17,7 +17,7 @@ const SearchFun = () => {
             </div>
         </div>
     );
-    return(
+    return (
         <div className="main_content">
             {listItems}
         </div>
