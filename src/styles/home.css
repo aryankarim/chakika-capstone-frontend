@@ -113,15 +113,16 @@ nav ul li a:hover{
 	transition: all ease 0.2s;
 }
 
+
+
+
+
 .activePage{
 	background-color: #2A6559;
     color:#FFFFFF;
 }
 
-nav .menu-btn,
-.menu-icon{
-		display:none;
-	}
+
 .intro{
 	font-family: 'Montserrat';
 	width: 500px;
@@ -632,11 +633,243 @@ hr{
     width: 33%;
 }
 
-.row{
+.frow{
     width: 100%;
     position: relative;
 }
 
 .col-u{
     padding-bottom: 1.5em;
+}
+
+
+/* Profile Account*/
+
+.profile-page .card-profile .card-profile-image img, .shadow {
+    box-shadow: 0 15px 35px #D4EDE8,0 5px 15px #D4EDE8!important;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: initial;
+    border: .0625rem solid rgba(0,0,0,.05);
+    border-radius: .25rem;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.pl-4, .px-4 {
+    padding-left: 1.5rem!important;
+}
+
+.justify-content-center {
+    justify-content: center!important;
+}
+
+
+
+.profile-page .card-profile .card-profile-image {
+    position: relative;
+}
+
+.profile-page .card-profile .card-profile-image img {
+    max-width: 180px;
+    border-radius: .25rem;
+    transform: translate(-50%,-30%);
+    position: absolute;
+    left: 50%;
+    transition: all .15s ease;
+}
+
+.text-lg-right {
+    text-align: right!important;
+}
+
+.align-self-lg-center {
+    align-self: center!important;
+}
+
+.order-lg-3 {
+    order: 3;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+.col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.text-center h3 {
+    color: #2A6559;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+
+.mt-5, .my-5 {
+    margin-top: 3rem!important;
+}
+
+.logOutButton {
+  background-color: #BF0B2C;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  padding: 15px 70px;
+  font-size: .8em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.mt-4, .my-4 {
+    margin-top: 1.5rem!important;
+}
+
+.pb-5, .py-5 {
+    padding-bottom: 3rem!important;
+}
+
+.pt-5, .py-5 {
+    padding-top: 3rem!important;
+}
+
+.lead, p {
+    font-weight: 300;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 3em;
+}
+
+.pr-4, .px-4 {
+    padding-right: 1.5rem!important;
+}
+
+/*Request*/
+
+/*Form Styling*/
+
+.bottom30{
+    width: 100%;
+    font-size: 1.5em;
+    color: #2A6559;
+}
+.callus.transparent .row{
+	margin-left:-5px;
+	margin-right:-5px;
+}
+.callus.transparent .col-sm-6,
+.callus.transparent .col-sm-{
+	padding-right:20px;
+}
+.form-control, .form-control:focus{
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+.form-group {
+  margin-bottom: 24px;
+  width: 50%;
+  display: inline;
+}
+.callus.transparent .form-group{
+	margin-bottom:10px;
+}
+.callus .form-control,
+.callus  label{
+	color:#2b2b2b;
+	font-size:13px;
+	font-weight:normal;
+}
+.callus .form-control{
+	height:42px;
+	background:#fbfbfb;
+	border:1px solid #dddddd;
+    width: 40%;
+    display: inline;
+    margin-bottom: 10px;
+}
+.callus.transparent .form-control{
+	background:transparent;
+}
+.callus .form-control,  .select{
+	color:#2b2b2b;
+	font-size:13px;
+}
+.callus textarea{
+	min-height:160px;
+	height:160px;
+    width: 40%;
+	resize:none;
+}
+.callus span,
+.callus a{
+	display:inline-block;
+	font-size:13px;
+	vertical-align: top;
+}
+.select {
+    border:1px solid #dddddd;
+    display: block;
+    height: 42px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.select::after {
+    background: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #2b2b2b;
+    content: "\f0dd";
+    font-size: 16px;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    top: 6px;
+    z-index: 1;
+}
+.select select {
+    -moz-appearance: none;
+    border: 0 none;
+    color: #2A6559;
+    height: 42px;
+    padding: 12px;
+    width: 100%;
+}
+.select select option {
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  height: 42px;
+  padding: 6px 12px;
+}
+label.bold{
+	font-weight: bold;
+}
+
+.Contact-container {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 3em;
+    border-top: 25px #2A6559 ;
 }

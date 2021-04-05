@@ -33,10 +33,10 @@ export default function Footer() {
                 
                 <hr />
 
-                <div className="row">
-                    <p className="col-u">
+                <div className="frow">
+                    <span className="col-u">
                         &copy;{new Date().getFullYear()} Chakika
-                    </p>
+                    </span>
                 </div>
             </div>
         </div>
