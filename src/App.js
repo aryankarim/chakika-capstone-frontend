@@ -12,19 +12,12 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-<<<<<<< HEAD
         <ProtectedRoute path="/" component={Home} exact />
         <Route path="/login" component={LoginSigninHeader} exact />
-        
         <ProtectedRoute path="/Searchp" component={Searchp} exact />
         <Route path="*" render={() => (<div id="notfound">NOT FOUND 404</div>)} />
-=======
-        <Route path="/" component={LoginSigninHeader} exact />
-        <Route path="/Home" component={Home} exact />
-        <Route path="/Searchp" component={Searchp} exact />
-        <Route path="/Account" component={Account} exact />
-        <Route path="/Contact" component={Contact} exact />
->>>>>>> backup
+        <ProtectedRoute path="/Account" component={Account} exact />
+        <ProtectedRoute path="/Contact" component={Contact} exact />
       </Switch>
     </BrowserRouter >
   );
