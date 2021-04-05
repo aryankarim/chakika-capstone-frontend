@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
+import LoginPage from './Components/LoginPage';
+import RegisterPage from './Components/RegisterPage';
 
 
 export default function LoginSigninHeader(props) {
