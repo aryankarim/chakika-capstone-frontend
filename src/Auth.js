@@ -4,6 +4,8 @@ class Auth {
 
     constructor() {
         this.authenticated = false;
+        this.email = "";
+        this.name = "";
     }
 
     async login(email, password) {
@@ -11,8 +13,7 @@ class Auth {
             const url = "http://localhost:8000/user/login";
             let res = await axios.post(url, {
                 email, password
-            });
-            this.authenticated = true;
+            })
             return res;
         } catch (err) {
             if (err.response.data.message

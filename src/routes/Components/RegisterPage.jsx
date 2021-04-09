@@ -5,7 +5,7 @@ import '../../styles/loginAndRegister.css';
 
 
 
-export default function RegisterPage() {
+export default function RegisterPage(props) {
     const [userState, setUserState] = useState({ email: '', password: '', fname: '', lname: '', location: null, phone: '', hasAgreed: false });
 
     const handleChange = (e) => {
@@ -29,6 +29,8 @@ export default function RegisterPage() {
         axios.post('http://localhost:8000/user/register', userState)
             .then(response => {
                 makeToast("success", response.data.message);
+                console.log(props);
+                props.signin();
                 console.log("register success");
             })
             .catch(err => {

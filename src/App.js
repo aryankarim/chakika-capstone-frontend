@@ -4,8 +4,8 @@ import Home from "./routes/Home";
 import LoginSigninHeader from "./routes/LoginSigninHeader";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Search from "./routes/Search";
-import Account from "./pages/Account";
-import Contact from "./pages/Contact";
+import Account from "./routes/Account";
+import Contact from "./routes/Contact";
 
 
 function App() {

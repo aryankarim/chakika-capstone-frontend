@@ -24,7 +24,7 @@ export default function LoginSigninHeader(props) {
                     <button onClick={signup} className="PageSwitcher__Item">Sign Up</button>
                 </div>
                 <div className="FormTitle">
-                    {currentTab ? <LoginPage {...props} /> : <RegisterPage {...props} />}
+                    {currentTab ? <LoginPage {...props} /> : <RegisterPage signin={signin} />}
                 </div>
             </div>
         </div>
