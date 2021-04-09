@@ -5,6 +5,7 @@ import '../../styles/loginAndRegister.css';
 
 
 
+
 export default function RegisterPage(props) {
     const [userState, setUserState] = useState({ email: '', password: '', fname: '', lname: '', location: null, phone: '', hasAgreed: false });
 
