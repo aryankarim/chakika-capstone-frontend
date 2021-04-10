@@ -2,11 +2,10 @@ import React from 'react';
 
 function Howwework() {
   return (
-    <div className="how-it-works">
+    <div className="home-how-it-works">
       <div className="container">
           <h2>How Chakika Works</h2>
-          <div className="flex">
-
+          <div className="home-flex">
               <div>
                   <span className="fas fa-car-crash"></span>
                   <h4>Provide Car Services</h4>

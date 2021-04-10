@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import LoginPage from './Components/LoginPage';
 import RegisterPage from './Components/RegisterPage';
+import chakika from './images/header-bgfliped.png'
 
 
 export default function LoginSigninHeader(props) {
@@ -16,14 +17,17 @@ export default function LoginSigninHeader(props) {
             setTab(prevTab => !prevTab)
     }
     return (
-        <div className="App">
-            <div className="App__Aside"><Link to='/' className="App__Aside__Logo"></Link></div>
-            <div className="App__Form">
-                <div className="PageSwitcher">
-                    <button onClick={signin} className="PageSwitcher__Item">Sign In</button>
-                    <button onClick={signup} className="PageSwitcher__Item">Sign Up</button>
+        <div className="register">
+            
+            <div className="register-side"><Link to='/' className="register-side-logo"></Link>
+            </div>
+            <img src={chakika} alt="" className="register-side-img"></img>
+            <div className="register-form">
+                <div className="register-login">
+                    <button onClick={signin} className="register-login-item">Sign In</button>
+                    <button onClick={signup} className="register-login-item">Sign Up</button>
                 </div>
-                <div className="FormTitle">
+                <div className="register-form-title">
                     {currentTab ? <LoginPage {...props} /> : <RegisterPage signin={signin} />}
                 </div>
             </div>

@@ -6,6 +6,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Search from "./routes/Search";
 import Account from "./routes/Account";
 import Contact from "./routes/Contact";
+import Garage from "./routes/Garage";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <ProtectedRoute path="/search" component={Search} exact />
         <ProtectedRoute path="/account" component={Account} exact />
         <ProtectedRoute path="/contact" component={Contact} exact />
+        <ProtectedRoute path="/garage" component={Garage} exact />
         <Route path="*" render={() => (<div id="notfound">NOT FOUND 404</div>)} />
       </Switch>
     </BrowserRouter >

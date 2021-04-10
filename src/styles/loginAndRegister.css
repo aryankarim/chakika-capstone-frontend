@@ -1,11 +1,11 @@
-.App {
+.register {
   height: 100vh;
   display: -ms-flexbox;
   display: flex;
   color: #D4EDE8;
 }
 
-.App__Aside__Logo {
+.register-side-logo {
   height: 49px;
   width: 158px;
   background-image: url("../routes/images/logo1.png");
@@ -14,20 +14,27 @@
   margin-left: 25px;
 }
 
-.App__Aside {
+.register-side {
   width: 50%;
-  background-color: #fff;
-  background-image: url("../routes/images/header-bgfliped.png");
+  background-color: #D4EDE8;
 }
 
-.App__Form {
+.register-side-img {
+  position: absolute;
+  width: 20em;
+  height: 20em;
+  left: 0;
+  bottom: 0;
+}
+
+.register-form {
   width: 50%;
   background-color: #2A6559;
   padding: 25px 40px;
   overflow: auto;
 }
 
-.PageSwitcher {
+.register-login {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
@@ -35,7 +42,7 @@
   margin-bottom: 10%;
 }
 
-.PageSwitcher__Item {
+.register-login-item {
   background-color: #142426;
   color: #D4EDE8;
   padding: 10px 25px;
@@ -47,62 +54,42 @@
   text-decoration: none;
 }
 
-.PageSwitcher__Item:active{
+.register-login-item:active{
   color: #D4EDE8;
 }
 
-.PageSwitcher__Item:hover{
+.register-login-item:hover{
   background-color: #1E4840;
   transition: all ease 0.2s;
 }
 
-.PageSwitcher__Item:focus{
+.register-login-item:focus{
   background-color: #1E4840;
 }
 
-.PageSwitcher__Item--Active {
-  background-color: #D4EDE8;
-  color: #122B26;
-}
 
-.PageSwitcher__Item:first-child {
+.register-login-item:first-child {
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }
-.PageSwitcher__Item:last-child {
+.register-login-item:last-child {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
 }
 
-.FormCenter {
+.register-form-center {
   margin-bottom: 50px;
 }
 
-.FormTitle {
+.register-form-title {
   color: #D4EDE8;
   font-weight: 300;
   margin-bottom: 50px;
 }
 
-.FormTitle__Link {
-  color: #142426;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.7em;
-  margin: 0 10px;
-  padding-bottom: 5px;
-}
 
-.FormTitle__Link:first-child {
-  margin-left: 0;
-}
 
-.FormTitle__Link--Active {
-  color: #D4EDE8;
-  border-bottom: 1px solid #D4EDE8;
-}
-
-.FormField {
+.register-form-field {
   margin-bottom: 40px;
 }
 
@@ -111,13 +98,13 @@
   display: table-cell;
 }
 
-.FormField__Label {
+.register-form-label {
   display: block;
   text-transform: uppercase;
   font-size: .9em;
   color: #D4EDE8;
 }
-.FormField__Input {
+.register-form-input {
   width: 85%;
   background-color: transparent;
   border: none;
@@ -130,23 +117,23 @@
   margin-top: 10px;
 }
 
-.FormField__Input::-webkit-input-placeholder {
+.register-form-input::-webkit-input-placeholder {
   color: #142426;
 }
 
-.FormField__Input:-ms-input-placeholder {
+.register-form-input:-ms-input-placeholder {
   color: #142426;
 }
 
-.FormField__Input::-ms-input-placeholder {
+.register-form-input::-ms-input-placeholder {
   color: #142426;
 }
 
-.FormField__Input::placeholder {
+.register-form-input::placeholder {
   color: #142426;
 }
 
-.FormField__Button {
+.regitser-form-btn {
   background-color: #D4EDE8;
   color: #142426;
   border: none;
@@ -158,30 +145,23 @@
   cursor: pointer;
 }
 
-.FormField__Button:active{
+.regitser-form-btn:active{
   background-color: #142426;
   color: #D4EDE8;
 }
 
-.FormField__Link {
-  color: #142426;
-  text-decoration: none;
-  display: inline-block;
-  border-bottom: 1.5px solid #142426;
-  padding-bottom: 5px;
-}
 
-.FormField__CheckboxLabel {
+.register-form-checkbox-label {
   color: #D4EDE8;
   font-size: .9em;
 }
 
-.FormField__Checkbox {
+.register-form-checkbox {
   position: relative;
   top: 1.5px;
 }
 
-.FormField__TermsLink {
+.register-form-terms {
   color: #D4EDE8;
   border-bottom: 1px solid #D4EDE8;
   text-decoration: none;
