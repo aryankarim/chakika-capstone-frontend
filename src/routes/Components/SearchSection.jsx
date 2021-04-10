@@ -21,7 +21,9 @@ function SearchSection() {
     });
     console.log(searchState);
   }
-  function searchDb() {
+
+  function searchDb(e) {
+    e.preventDefault();
     axios
       .get('http://localhost:8000/search', {
         headers: {

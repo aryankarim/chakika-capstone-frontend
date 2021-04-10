@@ -1,6 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 
 export default function Request() {
+
+  const [requestState, setrequestState] = useState({ name: null, email: localStorage.getItem('chakika_email'), phone: null, subject: null, message: null })
+  const handleChange = (e) => {
+    let target = e.target;
+    let value = target.value;
+    let name = target.name;
+
+    setrequestState(prevRequestState => {
+      return ({
+        ...prevRequestState,
+        [name]: value
+      })
+    });
+    console.log(requestState);
+  }
+
+  const sendToServer = (e) => {
+
+    e.preventDefault();
+    const config = {
+      headers: {
+        authorization: "Bearer " + localStorage.getItem("Chakika_token"),
+      }
+    };
+    axios
+      .post('http://localhost:8000/request/', requestState, config)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log("request not added", error)
+      })
+  }
     return (
         <div>
             <h2 className="contact-header">Can't Find What You're Looking For? <br />Send Us Your Custom Order</h2>
