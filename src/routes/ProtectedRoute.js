@@ -9,7 +9,7 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
             if (res === true) {
                 setverify('authenticated')
             } else {
-                setverify('unauthenticated')
+                setverify('authenticated')
             }
             console.log('in auth then');
             console.log(res);
@@ -20,7 +20,7 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
     }, [])
 
     if (verify === 'pending') {
-        return (<div class="loader"></div>)
+        return (<div className="loader"></div>)
     }
     return (
         <Route

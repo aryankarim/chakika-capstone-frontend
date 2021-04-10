@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import auth from '../../Auth'
 
 export default function AccountCard() {
     const logout = () => {
@@ -8,27 +7,27 @@ export default function AccountCard() {
     }
 
     return (
-        <div class="container">
-            <div class="card-profile shadow mt--300 card">
-                <div class="px-4">
-                    <div class="text-center mt-5">
-                        <h3>{localStorage.getItem('chakika_fullname')} <span class="font-weight-light">, 24</span></h3>
-                        <div class="h6 font-weight-300">
-                            <i class="ni location_pin mr-2">
+        <div className="container">
+            <div className="account-profile shadow account">
+                <div>
+                    <div className="account-center account-top">
+                        <h3>{localStorage.getItem('chakika_fullname')} <span className="font-weight-light">, 24</span></h3>
+                        <div className="account-element">
+                            <i>
                             </i>Nissan Sentra 2021
-                                    </div>
-                        <div class="h6 mt-4">
-                            <i class="ni business_briefcase-24 mr-2"></i>{localStorage.getItem('chakika_email')}
                         </div>
-                        <div class="h6 mt-4">
-                            <i class="ni business_briefcase-24 mr-2"></i>555-5555
-                                    </div>
-                    </div>
-                    <div class="mt-5 py-5 border-top text-center">
-                        <div class="justify-content-center row">
-                            <div class="col-lg-9">
-                                <div class="card-profile-actions py-4 mt-lg-0">
-                                    <Link to='/login' class="logOutButton" onClick={logout}>Log Out</Link>
+                        <div>
+                            <i></i>{localStorage.getItem('chakika_email')}
+                        </div>
+                        <div className="account-element">
+                            <i></i>555-5555
+                        </div>
+                     </div>
+                    <div className="account-top account-bottom border-top account-center">
+                        <div className="justify-account-center">
+                            <div>
+                                <div>
+                                    <Link to='/login' className="logOutButton" onClick={logout}>Log Out</Link>
                                 </div>
                             </div>
                         </div>

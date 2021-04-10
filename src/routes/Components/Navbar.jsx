@@ -8,12 +8,12 @@ function Navbar() {
       <Link to='/' className="logo">
         <img src={logo} alt="logo" />
       </Link>
-      <label className="menu-icon" for="menu-btn">
+      <label className="menu-icon" htmlFor="menu-btn">
         <span className="nav-icon"></span>
       </label>
       <ul className="menu">
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='#'>Garage</Link></li>
+        <li><Link to='/garage'>Garage</Link></li>
         <li><Link to='/account'>Account</Link></li>
         <li><Link to='/contact'>Contact Us</Link></li>
         <li><Link to='/search'>Search</Link></li>

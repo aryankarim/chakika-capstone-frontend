@@ -42,9 +42,9 @@ function SearchSection() {
   }
   return (
     <div>
-      <div className="contact">
+      <div className="search-header">
         <h3>Search For Your Need</h3>
-        <div className="contact-input">
+        <div className="search-input">
           <input type="text" placeholder="Search Here ..." name="search" value={searchState.search} onChange={handleChange} />
           <button onClick={searchDb} >Search</button>
         </div>

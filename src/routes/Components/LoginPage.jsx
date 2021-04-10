@@ -39,20 +39,20 @@ export default function LoginPage(props) {
     }
 
     return (
-        <div className="FormCenter">
-            <form onSubmit={handleSubmit} className="FormFields" >
-                <div className="FormField">
-                    <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
-                    <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={userState.email} onChange={handleChange} />
+        <div className="register-form-center">
+            <form onSubmit={handleSubmit} className="register-form-fields" >
+                <div className="register-form-field">
+                    <label className="register-form-label" htmlFor="email">E-Mail Address</label>
+                    <input type="email" id="email" className="register-form-input" placeholder="Enter your email" name="email" value={userState.email} onChange={handleChange} />
                 </div>
 
-                <div className="FormField">
-                    <label className="FormField__Label" htmlFor="password">Password</label>
-                    <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={userState.password} onChange={handleChange} />
+                <div className="register-form-field">
+                    <label className="register-form-label" htmlFor="password">Password</label>
+                    <input type="password" id="password" className="register-form-input" placeholder="Enter your password" name="password" value={userState.password} onChange={handleChange} />
                 </div>
 
-                <div className="FormField">
-                    <button className="FormField__Button mr-20">Sign In</button>
+                <div className="register-form-field">
+                    <button className="regitser-form-btn">Sign In</button>
                 </div>
 
             </form>
