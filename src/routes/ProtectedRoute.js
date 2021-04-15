@@ -9,7 +9,7 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
             if (res === true) {
                 setverify('authenticated')
             } else {
-                setverify('authenticated')
+                setverify('unauthenticated')
             }
             console.log('in auth then');
             console.log(res);

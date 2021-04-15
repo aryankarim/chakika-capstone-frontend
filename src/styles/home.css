@@ -606,7 +606,7 @@ hr{
     margin-top: 2.5em;
     margin-bottom: 1em;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto;
     padding-left: 20em;
     padding-right: 20em;
     width: 100%;
@@ -657,6 +657,8 @@ hr{
   }
   
   .option-grid{
+      display: flex;
+      flex-wrap: wrap;
       margin-left: 5px;
       margin-right: 5px;
   }
@@ -673,6 +675,28 @@ hr{
     width: 100%;
     background-color: #2A6559;
   }
+
+  .grid-row-btn{
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #2A6559;
+    background-color: #D4EDE8;
+    cursor: pointer;
+    border-radius: .3em;
+    font-weight: bold;
+    width: 100%;
+  }
+
+.grid-row-btn:hover{
+    color: #D4EDE8;
+    background-color: #2A6559;
+}
+
+.grid-row-btn:active{
+    color: #242425;
+    background-color: #2A6559;
+}
 
   .plus-grid{
     text-align: center;
