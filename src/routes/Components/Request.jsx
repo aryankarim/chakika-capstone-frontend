@@ -4,7 +4,8 @@ import makeToast from "../../Toaster";
 
 export default function Request() {
 
-  const [requestState, setrequestState] = useState({ name: null, email: localStorage.getItem('chakika_email'), phone: null, subject: null, message: null })
+  const [requestState, setrequestState] = useState({ name: null, phone: null, subject: null, message: null })
+  const [sent, setsent] = useState(true)
   const handleChange = (e) => {
     let target = e.target;
     let value = target.value;
@@ -33,6 +34,8 @@ export default function Request() {
       .post('http://localhost:8000/request/', requestState, config)
       .then(response => {
         makeToast("success", response.data.message)
+        setsent(prev => !prev)
+
       })
       .catch(error => {
         makeToast("error", error.response.data.message)
@@ -59,7 +62,7 @@ export default function Request() {
               <textarea className="form-control" name="message" onChange={handleChange} placeholder="Message"></textarea>
             </div>
             <br />
-            <button className="contact-btn" onClick={sendToServer}>Submit</button>
+            {sent ? <button className="contact-btn" onClick={sendToServer}>Submit</button> : <p>request successfully submited!</p>}
           </div>
         </form>
       </div>
