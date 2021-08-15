@@ -1,17 +1,17 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeFromCart, increment, decrement } from '../../actions'
+import { removeFromCart, increment, decrement, deleteCart } from '../../actions'
 import axios from 'axios'
 import makeToast from '../../Toaster';
 
 
 
 
-export default function Cart() {
+export default function Cart(props) {
     const dispatch = useDispatch();
     const cartItem = useSelector(state => state.cartReducer);
 
-
+    console.log(props);
     const removeCartItem = (product_id) => {
 
         axios
@@ -60,7 +60,7 @@ export default function Cart() {
                 </td>
 
                 <td className="cart-item-total">
-                    <h3>${item.price * item.quantity}</h3>
+                    <h3>${Math.round((item.price * item.quantity) * 100) / 100}</h3>
                 </td>
 
             </tr>
@@ -73,6 +73,31 @@ export default function Cart() {
 
     if (cartItem[0] === 'loading') {
         return (<div className="loader"></div>)
+    }
+
+    function deleteAll() {
+
+        if (cartItem.length === 0) {
+            makeToast('error', 'No items to delete')
+            return
+        }
+        axios
+            .delete('http://localhost:8000/cart/removeAll',
+                {
+                    headers: {
+                        authorization: "Bearer " + localStorage.getItem("Chakika_token"),
+                    }
+                }
+            )
+            .then(() => {
+
+                makeToast("success", "All items removed")
+                dispatch(deleteCart())
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div>
@@ -90,8 +115,11 @@ export default function Cart() {
                 </table>
 
                 <div className="cart-bottom">
-                    <button className="cart-bottom-btn">
-                        Proceed To Checkout
+                    <button className="cart-button-clear" onClick={deleteAll}>
+                        clear all
+                    </button>
+                    <button className="cart-bottom-total">
+                        ${Math.round(cartItem.reduce((a, { price, quantity }) => a + (price * quantity), 0) * 100) / 100}
                     </button>
                 </div>
             </div>

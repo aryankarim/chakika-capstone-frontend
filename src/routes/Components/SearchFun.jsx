@@ -19,8 +19,9 @@ const SearchFun = (props) => {
                 <h2>{item.product_name}</h2>
                 <p>{item.brand_name + " " + item.model_name + " " + item.model_year}</p>
                 <p>available in {item.store_name}</p>
-                <p className="price">{item.unit_price}<span>$</span>{item.discount_rate !== 0 ? <span className="discount-rate">&nbsp;-%{item.discount_rate * 100}&nbsp;</span> : ''}</p>
-                <button className="search-result-btn" onClick={() => addToCart(item.product_id, (1 - item.discount_rate) * item.unit_price, item.product_name)}>Add to Cart</button>
+                <p className="price">{item.unit_price}<span>$</span>{item.discount_rate !== 0 ? <span className="discount-rate">&nbsp;-%{Math.round(item.discount_rate * 10000) / 100}&nbsp;</span> : ''}</p>
+                {item.stock_quantity === 0 ? <button className="slider-btn-out">Out of Stock</button> : <button className="search-result-btn" onClick={() => addToCart(item.product_id, (1 - item.discount_rate) * item.unit_price, item.product_name)}>Add to Cart</button>}
+
             </div>
         </div>
     );

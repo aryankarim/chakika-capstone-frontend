@@ -3,8 +3,9 @@ import { Redirect, Route } from 'react-router-dom';
 import auth from "../Auth";
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
-import { fetchCartSuccessful, loadingForCartItems } from '../actions'
+import { fetchCartSuccessful, loadingForCartItems, fetchDiscountSuccessful, loadForDiscountFetch, fetchGarageSuccessful, loadForGarageFetch } from '../actions'
 import makeToast from '../Toaster'
+
 
 export default function ProtectedRoute({ component: Component, ...rest }) {
     const [verify, setverify] = useState('pending')
@@ -33,7 +34,6 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
                             authorization: "Bearer " + localStorage.getItem("Chakika_token"),
                         }
                     }).then(res => {
-                        console.log(res.data.message);
                         dispatch(fetchCartSuccessful(res.data.message))
                     }).catch((error) => {
                         makeToast('error', error)
@@ -41,15 +41,55 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
                 }
             }
             dispatch(fetchCartItems())
+
+            function getDiscountItems() {
+                return function (dispatch) {
+                    dispatch(loadForDiscountFetch())
+                    axios.get('http://localhost:8000/discount/', {
+                        headers: {
+                            authorization: "Bearer " + localStorage.getItem("Chakika_token"),
+                        }
+                    }).then((response) => {
+                        dispatch(fetchDiscountSuccessful(response.data.message));
+                    }).catch((err) => {
+                        console.log("error discount items", err);
+                    })
+                }
+            }
+            dispatch(getDiscountItems())
         }
     }, [dispatch])
 
 
+    useEffect(() => {
+        function getGarageDatas() {
+            return function (dispatch) {
+                dispatch(loadForGarageFetch())
+                const config = {
+                    headers: {
+                        authorization: "Bearer " + localStorage.getItem("Chakika_token"),
+                    }
+                };
+                let one = "http://localhost:8000/category/categories"
+                axios.get(one, config).then((response) => {
+                    const responseOne = response.data.message
+                    dispatch(fetchGarageSuccessful({ ...responseOne }))
+                    console.log(responseOne);
+                }).catch(errors => {
+                    console.log(errors);
+                })
+            }
+
+        }
+        dispatch(getGarageDatas());
+
+    }, [dispatch])
 
 
     if (verify === 'pending') {
         return (<div className="loader"></div>)
     }
+
     return (
         <Route
             {...rest}

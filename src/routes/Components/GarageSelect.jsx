@@ -103,7 +103,6 @@ export default function GarageSelect(props) {
   useEffect(() => {
     if (props.saved.brand_id !== null) {
       setsavedCarState(prev => !prev)
-
     }
   }, [props.saved.brand_id])
 

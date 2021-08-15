@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import GarageSelect from './GarageSelect'
-
-
+import { useSelector } from 'react-redux'
+import axios from 'axios'
 
 
 export default function GarageSection() {
 
-  const [brandState, setbrandState] = useState([])
-  const [modelState, setmodelState] = useState([])
-  const [yearState, setyearState] = useState([])
+  const brandState = useSelector(state => state.garageReducer.brands)
+  const modelState = useSelector(state => state.garageReducer.models)
+  const yearState = useSelector(state => state.garageReducer.years)
   const [garageCarsState, setgarageCarsState] = useState([])
-  // const [garageSelectionState, setGarageSelectionState] = useState([])
 
   function nextCar(items) {
     //setGarageSelectionState(prevState => ([...prevState, < GarageSelect brand={brandState} model={modelState} year={yearState} saved={garageCarsState[counter]} />]))
@@ -21,21 +19,6 @@ export default function GarageSection() {
 
   useEffect(() => {
     function getDatas() {
-
-      axios
-        .get('http://localhost:8000/category/categories', {
-          headers: {
-            authorization: "Bearer " + localStorage.getItem("Chakika_token"),
-          }
-        }).then(response => {
-          setbrandState(prevState => response.data.message.brands)
-          setmodelState(prevState => response.data.message.models)
-          setyearState(prevState => response.data.message.years)
-        })
-        .catch(error => {
-          console.log("err occured");
-        })
-
       axios
         .get('http://localhost:8000/category/garagecars', {
           headers: {
