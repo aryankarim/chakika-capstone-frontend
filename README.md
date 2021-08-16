@@ -1,4 +1,4 @@
-NOTE: You should first start-up the [backend server](https://github.com/aryanmajeed/capstone-backend).
+NOTE: You should first start-up the [backend server](https://github.com/aryanmajeed/capstone-backend). Then come back to follow the steps below.
 
 This is the front-end for Chakika eCommerce web app.
 
@@ -10,6 +10,6 @@ This is the front-end for Chakika eCommerce web app.
 3. Run 'npm start' command 
     // after this the front-end server should be running on port 3000
     
-Now running http://localhost:3000/ should display the website on your browser
+Now http://localhost:3000/ should display the website on your browser
 
 
