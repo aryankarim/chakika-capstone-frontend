@@ -7,7 +7,7 @@ import '../../styles/loginAndRegister.css';
 
 
 export default function RegisterPage(props) {
-    const [userState, setUserState] = useState({ email: '', password: '', fname: '', lname: '', location: null, phone: '', hasAgreed: false });
+    const [userState, setUserState] = useState({ email: '', password: '', repeatpassword: '', fname: '', lname: '', location: null, phone: '' });
 
     const handleChange = (e) => {
         let target = e.target;
@@ -57,6 +57,10 @@ export default function RegisterPage(props) {
                     <input type="password" id="password" className="register-form-input" placeholder="Enter your password" name="password" value={userState.password} onChange={handleChange} />
                 </div>
                 <div className="register-form-field">
+                    <label className="register-form-label" htmlFor="repeatpassword">Repeat Password</label>
+                    <input type="password" id="repeatpassword" className="register-form-input" placeholder="Enter your password again" name="repeatpassword" value={userState.repeatpassword} onChange={handleChange} />
+                </div>
+                <div className="register-form-field">
                     <label className="register-form-label" htmlFor="email">E-Mail Address</label>
                     <input type="email" id="email" className="register-form-input" placeholder="Enter your email" name="email" value={userState.email} onChange={handleChange} />
                 </div>
@@ -64,13 +68,6 @@ export default function RegisterPage(props) {
                     <label className="register-form-label" htmlFor="phone">Phone Number</label>
                     <input type="text" id="phone" className="register-form-input" placeholder="Enter your Phone Number" name="phone" value={userState.num} onChange={handleChange} />
                 </div>
-
-                <div className="register-form-field">
-                    <label className="register-form-checkbox-label">
-                        <input className="register-form-checkbox" type="checkbox" name="hasAgreed" value={userState.value} onChange={handleChange} /> I agree with all the statements in <a href="https://www.facebook.com" className="register-form-terms">terms of service</a>
-                    </label>
-                </div>
-
                 <div className="register-form-field">
                     <button className="regitser-form-btn">Sign Up</button>
                 </div>

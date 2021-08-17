@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="main-footer">
             <div className="container">
                 <div className="foot-row">
-                    
+
                     <div className="footer-col">
                         <h2>Chakika</h2>
                         <ul>
@@ -15,22 +15,22 @@ export default function Footer() {
                     </div>
 
                     <div className="footer-col">
-                    <h2>Contacts</h2>
+                        <h2>Contacts</h2>
                         <ul>
-                        <li>Sulaimaniyah</li>
+                            <li>Sulaimaniyah</li>
                             <li>555-0505</li>
                         </ul>
                     </div>
 
                     <div className="footer-col">
-                    <h2>Feedback</h2>
+                        <h2>Feedback</h2>
                         <ul>
-                         <li>Make sure to send us your feedback, we will greet them with warm arms</li>
+                            <li>Make sure to send us your feedback, we will greet them with warm arms</li>
                         </ul>
                     </div>
 
                 </div>
-                
+
                 <hr />
 
                 <div className="footer-row">

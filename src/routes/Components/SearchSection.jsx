@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import SearchFun from './SearchFun'
+import makeToast from '../../Toaster';
 
 function SearchSection() {
 
@@ -24,6 +25,11 @@ function SearchSection() {
 
   function searchDb(e) {
     e.preventDefault();
+
+    if (searchState.search === '') {
+      makeToast("error", "fields cannot be empty!")
+      return
+    }
     axios
       .get('http://localhost:8000/search', {
         headers: {
@@ -32,13 +38,15 @@ function SearchSection() {
         params: searchState
       })
       .then(response => {
-        console.log(response);
         setResultState(prevstate => response.data)
-        console.log("search response success");
+        console.log(response.data);
+        document.getElementById('search-result').innerHTML = " &nbsp; showing the result of: " + searchState.search;
+
       })
       .catch(error => {
         setResultState(prevstate => [])
-        console.log("no item found", error)
+        document.getElementById('search-result').innerHTML = " &nbsp; no item was found for: " + searchState.search;
+
       })
 
   }
@@ -51,6 +59,7 @@ function SearchSection() {
           <button onClick={searchDb} >Search</button>
         </div>
       </div>
+      <p id="search-result"> </p>
       <SearchFun searchResult={resultState} />
     </div>
   );

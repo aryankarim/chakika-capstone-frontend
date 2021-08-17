@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { useDispatch } from 'react-redux'
+import { deleteCart } from '../../actions'
 
 export default function AccountCard() {
+    const dispatch = useDispatch();
     const logout = () => {
         localStorage.removeItem('Chakika_token')
+        dispatch(deleteCart())
     }
 
     return (
@@ -11,18 +15,14 @@ export default function AccountCard() {
             <div className="account-profile shadow account">
                 <div>
                     <div className="account-center account-top">
-                        <h3>{localStorage.getItem('chakika_fullname')} <span className="font-weight-light">, 24</span></h3>
+                        <h3>{localStorage.getItem('chakika_fullname')} </h3>
                         <div className="account-element">
-                            <i>
-                            </i>Nissan Sentra 2021
+
                         </div>
                         <div>
                             <i></i>{localStorage.getItem('chakika_email')}
                         </div>
-                        <div className="account-element">
-                            <i></i>555-5555
-                        </div>
-                     </div>
+                    </div>
                     <div className="account-top account-bottom border-top account-center">
                         <div className="justify-account-center">
                             <div>

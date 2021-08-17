@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import Navbar from './Navbar';
+
 
 function Header() {
   return (
     <div className="home-header">
-      <Navbar />
       <div className="home-header-intro">
         <p>Having a car problem ?</p>
         <h1><span>We've Got You Covered</span></h1>
