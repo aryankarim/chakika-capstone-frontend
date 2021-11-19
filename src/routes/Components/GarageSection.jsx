@@ -20,7 +20,7 @@ export default function GarageSection() {
   useEffect(() => {
     function getDatas() {
       axios
-        .get('http://localhost:8000/category/garagecars', {
+        .get('https://blooming-citadel-16531.herokuapp.com/category/garagecars', {
           headers: {
             authorization: "Bearer " + localStorage.getItem("Chakika_token"),
           }

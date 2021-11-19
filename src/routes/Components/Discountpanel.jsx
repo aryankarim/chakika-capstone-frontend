@@ -32,7 +32,7 @@ export default function Discountpanel() {
         }
 
         axios
-            .post('http://localhost:8000/cart/add', { productId: product_id, productPrice: price }, {
+            .post('https://blooming-citadel-16531.herokuapp.com/cart/add', { productId: product_id, productPrice: price }, {
                 headers: {
                     authorization: "Bearer " + localStorage.getItem("Chakika_token"),
                 }

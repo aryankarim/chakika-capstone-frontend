@@ -37,7 +37,7 @@ export default function GarageSelect(props) {
 
   const submitCategory = () => {
     axios
-      .get('http://localhost:8000/category/results', {
+      .get('https://blooming-citadel-16531.herokuapp.com/category/results', {
         headers: {
           authorization: "Bearer " + localStorage.getItem("Chakika_token"),
         },
@@ -54,7 +54,7 @@ export default function GarageSelect(props) {
 
   const saveCar = () => {
     axios
-      .put('http://localhost:8000/category/save', { brand: categorySearchState.brand, model: categorySearchState.model }
+      .put('https://blooming-citadel-16531.herokuapp.com/category/save', { brand: categorySearchState.brand, model: categorySearchState.model }
         , {
           headers: {
             authorization: "Bearer " + localStorage.getItem("Chakika_token"),
@@ -70,7 +70,7 @@ export default function GarageSelect(props) {
   const removeCar = () => {
     if (savedCarState) {
       axios
-        .delete('http://localhost:8000/category/delete',
+        .delete('https://blooming-citadel-16531.herokuapp.com/category/delete',
           {
             headers: {
               authorization: "Bearer " + localStorage.getItem("Chakika_token"),

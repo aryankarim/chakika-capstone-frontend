@@ -31,7 +31,7 @@ export default function Request() {
       }
     };
     axios
-      .post('http://localhost:8000/request/', requestState, config)
+      .post('https://blooming-citadel-16531.herokuapp.com/request/', requestState, config)
       .then(response => {
         makeToast("success", response.data.message)
         setsent(prev => !prev)

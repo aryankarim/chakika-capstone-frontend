@@ -27,7 +27,7 @@ export default function RegisterPage(props) {
 
         console.log('The form was submitted with the following data:');
 
-        axios.post('http://localhost:8000/user/register', userState)
+        axios.post('https://blooming-citadel-16531.herokuapp.com/user/register', userState)
             .then(response => {
                 makeToast("success", response.data.message);
                 console.log(props);
