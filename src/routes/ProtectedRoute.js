@@ -48,7 +48,7 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
               dispatch(fetchCartSuccessful(res.data.message));
             })
             .catch((error) => {
-              makeToast('error', error);
+              console.log('error', error);
             });
         };
       };
