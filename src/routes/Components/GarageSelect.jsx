@@ -47,8 +47,9 @@ export default function GarageSelect(props) {
         setResultState(prevState => response.data.message)
       })
       .catch(error => {
-        makeToast("error", error.response.data.message)
-        console.log(error, "err occured in garageselect");
+        if(error && error.response && error.response.data && error.response.data.message){
+          makeToast("error", error.response.data.message)
+        }
       })
   }
 
@@ -62,7 +63,6 @@ export default function GarageSelect(props) {
         })
       .then(response => {
         setsavedCarState(prevState => true)
-        console.log("save success");
       })
       .catch(error => {
       })
@@ -81,7 +81,6 @@ export default function GarageSelect(props) {
         )
         .then(response => {
           setsavedCarState(prevState => false)
-          console.log("delete success");
         })
         .catch(error => {
 
