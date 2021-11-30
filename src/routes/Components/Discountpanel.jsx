@@ -38,12 +38,16 @@ export default function Discountpanel() {
                 }
             })
             .then(response => {
-                makeToast("success", response.data.message)
+                if(response && response.data && response.data.message){
+                    makeToast("success", response.data.message)
+                }
                 dispatch(addToCartAction({ product_id, product_name, price, quantity: 1, total: price }))
             })
             .catch(error => {
-                makeToast("error", error.response.data.message)
-                console.log("request not added", error)
+                if(error && error.response && error.response.data && error.response.data.message){
+                    makeToast("error", error.response.data.message)
+                }
+                console.log("Server error", error)
             })
     }
     console.log(discountedProducts);
