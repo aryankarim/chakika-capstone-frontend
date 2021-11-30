@@ -27,16 +27,18 @@ export default function RegisterPage(props) {
 
         console.log('The form was submitted with the following data:');
 
-        axios.post('http://localhost:8000/user/register', userState)
+        axios.post('https://blooming-citadel-16531.herokuapp.com/user/register', userState)
             .then(response => {
-                makeToast("success", response.data.message);
-                console.log(props);
+                if(response && response.data && response.data.message){
+                    makeToast("success", response.data.message);
+                }
                 props.signin();
-                console.log("register success");
             })
-            .catch(err => {
-                makeToast("error", err.response.data.message);
-                console.log("register failed", err)
+            .catch(error => {
+                if(error && error.response && error.response.data && error.response.data.message){
+                    makeToast("error", error.response.data.message);
+                }
+                console.log("register failed", error)
             })
 
     }

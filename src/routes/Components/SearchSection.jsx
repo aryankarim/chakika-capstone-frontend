@@ -31,7 +31,7 @@ function SearchSection() {
       return
     }
     axios
-      .get('http://localhost:8000/search', {
+      .get('https://blooming-citadel-16531.herokuapp.com/search', {
         headers: {
           authorization: "Bearer " + localStorage.getItem("Chakika_token"),
         },

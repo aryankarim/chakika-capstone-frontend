@@ -38,14 +38,18 @@ const SearchFun = (props) => {
             }
         };
         axios
-            .post('http://localhost:8000/cart/add', { productId: product_id, productPrice: price }, config)
+            .post('https://blooming-citadel-16531.herokuapp.com/cart/add', { productId: product_id, productPrice: price }, config)
             .then(response => {
-                makeToast("success", response.data.message)
-                dispatch(addToCartAction({ product_id, product_name, price, quantity: 1, total: price }))
+                if(response && response.data && response.data.message){
+                    makeToast("success", response.data.message)
+                    dispatch(addToCartAction({ product_id, product_name, price, quantity: 1, total: price }))
+                }
             })
             .catch(error => {
-                makeToast("error", error.response.data.message)
-                console.log("request not added", error)
+                if(error && error.response && error.response.data && error.response.data.message){
+                    makeToast("error", error.response.data.message)
+                }
+                console.log(error)
             })
     }
 

@@ -15,7 +15,7 @@ export default function Cart(props) {
     const removeCartItem = (product_id) => {
 
         axios
-            .delete('http://localhost:8000/cart/remove',
+            .delete('https://blooming-citadel-16531.herokuapp.com/cart/remove',
                 {
                     headers: {
                         authorization: "Bearer " + localStorage.getItem("Chakika_token"),
@@ -82,21 +82,22 @@ export default function Cart(props) {
             return
         }
         axios
-            .delete('http://localhost:8000/cart/removeAll',
+            .delete('https://blooming-citadel-16531.herokuapp.com/cart/removeAll',
                 {
                     headers: {
                         authorization: "Bearer " + localStorage.getItem("Chakika_token"),
                     }
                 }
             )
-            .then(() => {
-
-                makeToast("success", "All items removed")
+            .then((response) => {
+                if(response && response.data && response.data.message){
+                    makeToast("success", "All items removed")
+                }
                 dispatch(deleteCart())
 
             })
             .catch(error => {
-                console.log(error);
+                console.log('server error',error);
             })
     }
     return (

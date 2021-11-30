@@ -25,15 +25,19 @@ export default function LoginPage(props) {
         e.preventDefault();
 
         auth.login(userState.email, userState.password).then((response) => {
-            console.log(response);
-            makeToast("success", response.data.message);//makes life easier if message was not defined it will catch it
+            if(response && response.data && response.data.message){
+                makeToast("success", response.data.message);
+            }
             localStorage.setItem('chakika_fullname', response.data.name)
             localStorage.setItem('chakika_email', response.data.email)
             auth.authenticated = true
             localStorage.setItem("Chakika_token", response.data.token);
             props.history.push("/");
-        }).catch((err) => {
-            console.log(err);
+        }).catch((error) => {
+            if(error && error.response && error.response.data && error.response.data.message){
+                makeToast('error', error.response.data.message)
+            }
+            console.log(error);
         });
 
     }

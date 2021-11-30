@@ -37,7 +37,7 @@ export default function GarageSelect(props) {
 
   const submitCategory = () => {
     axios
-      .get('http://localhost:8000/category/results', {
+      .get('https://blooming-citadel-16531.herokuapp.com/category/results', {
         headers: {
           authorization: "Bearer " + localStorage.getItem("Chakika_token"),
         },
@@ -47,14 +47,15 @@ export default function GarageSelect(props) {
         setResultState(prevState => response.data.message)
       })
       .catch(error => {
-        makeToast("error", error.response.data.message)
-        console.log(error, "err occured in garageselect");
+        if(error && error.response && error.response.data && error.response.data.message){
+          makeToast("error", error.response.data.message)
+        }
       })
   }
 
   const saveCar = () => {
     axios
-      .put('http://localhost:8000/category/save', { brand: categorySearchState.brand, model: categorySearchState.model }
+      .put('https://blooming-citadel-16531.herokuapp.com/category/save', { brand: categorySearchState.brand, model: categorySearchState.model }
         , {
           headers: {
             authorization: "Bearer " + localStorage.getItem("Chakika_token"),
@@ -62,7 +63,6 @@ export default function GarageSelect(props) {
         })
       .then(response => {
         setsavedCarState(prevState => true)
-        console.log("save success");
       })
       .catch(error => {
       })
@@ -70,7 +70,7 @@ export default function GarageSelect(props) {
   const removeCar = () => {
     if (savedCarState) {
       axios
-        .delete('http://localhost:8000/category/delete',
+        .delete('https://blooming-citadel-16531.herokuapp.com/category/delete',
           {
             headers: {
               authorization: "Bearer " + localStorage.getItem("Chakika_token"),
@@ -81,7 +81,6 @@ export default function GarageSelect(props) {
         )
         .then(response => {
           setsavedCarState(prevState => false)
-          console.log("delete success");
         })
         .catch(error => {
 
