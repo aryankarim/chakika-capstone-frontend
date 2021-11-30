@@ -12,7 +12,6 @@ export default function GarageSection() {
   const [garageCarsState, setgarageCarsState] = useState([])
 
   function nextCar(items) {
-    //setGarageSelectionState(prevState => ([...prevState, < GarageSelect brand={brandState} model={modelState} year={yearState} saved={garageCarsState[counter]} />]))
     return (< GarageSelect brand={brandState} model={modelState} year={yearState} saved={items} />)
   }
 
@@ -28,14 +27,14 @@ export default function GarageSection() {
           setgarageCarsState(prevState => response.data.message)
         })
         .catch(error => {
-          console.log("err occured in useeffect garagesection function");
+          console.log("Server error");
         })
 
     }
     getDatas();
 
   }, [])
-  //console.log(garageCarsState);
+
   function addCar() {
     setgarageCarsState(prevState => ([...prevState, {
       brand_id: null,
