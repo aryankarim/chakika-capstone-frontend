@@ -11,7 +11,6 @@ import {
   fetchGarageSuccessful,
   loadForGarageFetch,
 } from '../actions';
-import makeToast from '../Toaster';
 
 export default function ProtectedRoute({ component: Component, ...rest }) {
   const [verify, setverify] = useState('pending');
