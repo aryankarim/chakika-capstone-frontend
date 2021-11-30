@@ -33,12 +33,15 @@ export default function Request() {
     axios
       .post('https://blooming-citadel-16531.herokuapp.com/request/', requestState, config)
       .then(response => {
-        makeToast("success", response.data.message)
+        if(response && response.data && response.data.message){
+          makeToast("success", response.data.message)
+        }
         setsent(prev => !prev)
-
       })
       .catch(error => {
-        makeToast("error", error.response.data.message)
+        if(error && error.response && error.response.data && error.response.data.message){
+          makeToast("error", error.response.data.message)
+        }
         console.log("request not added", error)
       })
   }
