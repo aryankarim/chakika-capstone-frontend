@@ -89,14 +89,15 @@ export default function Cart(props) {
                     }
                 }
             )
-            .then(() => {
-
-                makeToast("success", "All items removed")
+            .then((response) => {
+                if(response && response.data && response.data.message){
+                    makeToast("success", "All items removed")
+                }
                 dispatch(deleteCart())
 
             })
             .catch(error => {
-                console.log(error);
+                console.log('server error',error);
             })
     }
     return (
