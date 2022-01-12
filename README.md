@@ -1,15 +1,26 @@
-NOTE: You should first start-up the [backend server](https://github.com/aryanmajeed/capstone-backend). Then come back to follow the steps below.
+# Chakika | Front-end
 
-This is the front-end for Chakika eCommerce web app.
 
-// please follow the instructions below to start up the Chakika React server
+An e-commerce website for buying car parts, aiming to reduce the hassle of searching and finding suitable parts in the Kurdistan Region in Iraq.
 
-1. Clone this repo on your computer
-2. Open the cmd(command line prompt) in this repo run 'npm install' command 
-    // this should install all the dependencies for the front-end project
-3. Run 'npm start' command 
-    // after this the front-end server should be running on port 3000
-    
-Now http://localhost:3000/ should display the website on your browser
+
+This project is made with JavaScript, and I'm currently busy migrating it to TypeScript. [TypeScript Version](https://github.com/aryankarim/chakika-capstone-frontend-typescript)
+
+## Technologies
+
+`ReactJS, Redux, CSS`
+
+## Features
+
+- creating a free account
+- saving cars models for convenient searching
+- providing discounted items
+- cart functionality
+
+## Installation
+
+- clone this repo on your PC
+- open a terminal and run `npm install` in the local repo
+- build the project using `npm build` or start it using `npm start` 
 
 
